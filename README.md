@@ -10,7 +10,7 @@ Rápida descrição do objetivo de fazer esse projeto
 | :fire: Desafio     | https://url-do-desafio.com.br
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
-![](https://github.com/pfluiz/Alura_Challenge_Novexus/blob/main/Logo%20(5).png)#vitrinedev)
+![](https://github.com/pfluiz/Alura_Challenge_Novexus/blob/a557fabd0e6154e7425cba12046b1fa456f219a8/Logo%20(5).png#vitrinedev)
 
 ## Detalhes do projeto
 
