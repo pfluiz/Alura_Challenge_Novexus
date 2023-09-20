@@ -2,7 +2,7 @@
 
 Este projeto de classificação de churn visa aplicar técnicas de Ciência de Dados e Machine Learning para identificar clientes em risco de abandono, auxiliando a empresa a melhorar a retenção e maximizar a receita.
 
-| :placard: Vitrine.Dev |     |
+| :placard: Vitrine.Dev |https://cursos.alura.com.br/vitrinedev/paulo-f-luiz/project/Alura_Challenge_Novexus/12180243     |
 | -------------  | --- |
 | :sparkles: Nome        | **Predictive_Churn**
 | :label: Tecnologias | python, pandas, scikit-learn, matplotlib, plotly
