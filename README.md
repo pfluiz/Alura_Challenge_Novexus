@@ -16,7 +16,7 @@ Este projeto de classificação de churn visa aplicar técnicas de Ciência de D
 
 Este projeto busca entender e analisar o fenômeno de "Churn" de clientes em um conjunto de dados obtidos através de uma API. O objetivo é identificar padrões, criar visualizações e aplicar técnicas de pré-processamento para preparar os dados para modelagem. O projeto foi dividido em vários desafios para tornar a análise mais estruturada e eficaz.
 
-## Desafios e Atividades
+# SEMANA 1 - RESUMO
 
 ### 1. Entender quais informações o conjunto de dados possui
 - **Atividades**: 
@@ -40,4 +40,40 @@ Este projeto busca entender e analisar o fenômeno de "Churn" de clientes em um 
 ## Resultados da Semana
 
 O resultado deste projeto foi a criação de um DataFrame contendo apenas as características definidas pelo método chi2. Estes dados serão utilizados para a construção dos modelos de Machine Learning na próxima semana.
+
+
+# SEMANA 2 - RESUMO
+
+## Verificação de Balanceamento da Variável Target
+
+A variável target foi minuciosamente avaliada para verificar se estava balanceada. Identificou-se um desbalanceamento no conjunto de dados. Para abordar essa questão, o método de Under Sampling foi aplicado, conforme orientações presentes no artigo “Lidando com o desbalanceamento de dados”.
+
+## Métrica a ser Otimizada: Recall
+
+Escolheu-se o Recall como a métrica ideal para ser otimizada. A justificativa para a utilização dessa métrica centra-se na sua capacidade de identificar verdadeiros positivos. No contexto do projeto, que envolve a classificação de churn, é crucial minimizar o número de falsos negativos. Ou seja, queremos evitar a situação em que o modelo prevê que um cliente não irá abandonar o serviço quando, na realidade, ele vai. Isso é especialmente crítico em um cenário de churn, onde perder um cliente pode ter implicações financeiras significativas para o negócio.
+
+## Modelos de Machine Learning Criados
+
+Durante esta fase, foram implementados três modelos diferentes para solucionar o problema de classificação: 
+
+1. Random Forest
+2. Regressão Logística
+3. XGBoost
+
+A implementação de múltiplos modelos permitiu uma experimentação robusta e uma análise mais profunda das métricas de classificação.
+
+## Escolha do Melhor Modelo
+
+Os três modelos tiveram uma performance superior quando aplicados ao conjunto de dados balanceado com Under Sampling. 
+
+## Otimização do Melhor Modelo
+
+Foi realizado um Grid Search em cada um dos modelos. Esta otimização resultou em uma leve melhoria do modelo de Regressão Logística.
+
+## Salvamento do Modelo
+
+Finalmente, o modelo de Regressão Logística otimizado foi salvo utilizando a biblioteca `pickle`, permitindo sua reutilização futura para previsões mais precisas em novos conjuntos de dados.
+
+Este resumo serve como um registro das atividades realizadas durante a segunda semana do projeto de Data Science e será anexado ao arquivo README no repositório do GitHub.
+
 
