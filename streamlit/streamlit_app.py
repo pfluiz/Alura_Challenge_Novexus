@@ -1,12 +1,36 @@
-import streamlit as st
+from imblearn.under_sampling import RandomUnderSampler
+from pandas import json_normalize
+from sklearn.dummy import DummyClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import recall_score
+from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
+import pickle
+import plotly.express as px
+import random
+import seaborn as sns
+import xgboost as xgb
 from joblib import load
+from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
+import streamlit as st
 
 # Função para carregar dados do CSV
-@st.cache_data  # Substitui o st.cache depreciado
+@st.cache  # Substitui o st.cache depreciado
 def load_data():
-    data = pd.read_csv(r'C:\Users\paulo\OneDrive\Área de Trabalho\df_balanceado.csv')  # Usando r para string raw
+    data = pd.read_csv('df_balanceado.csv')  # Removendo o caminho absoluto
     return data
+
 
 # Carregar os dados
 data = load_data()
