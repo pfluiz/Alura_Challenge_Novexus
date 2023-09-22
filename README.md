@@ -6,7 +6,7 @@ Este projeto de classificação de churn visa aplicar técnicas de Ciência de D
 | -------------  | --- |
 | :sparkles: Nome        | **Predictive_Churn**
 | :label: Tecnologias | python, pandas, scikit-learn, matplotlib, plotly
-| :rocket: URL         | https://url-deploy.com.br
+| :rocket: URL         |https://novexus.streamlit.app/
 | :fire: Desafio     | [Challenge Dados Alura](https://www.alura.com.br/challenges/dados-2?host=https://cursos.alura.com.br)
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
