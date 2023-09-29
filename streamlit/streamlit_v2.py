@@ -25,7 +25,6 @@ from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
-import shap
 import streamlit as st
 import streamlit.components.v1 as components
 from lightgbm import LGBMClassifier
