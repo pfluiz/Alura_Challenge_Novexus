@@ -25,13 +25,35 @@ from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
+import shap
+import streamlit as st
+import streamlit.components.v1 as components
+from lightgbm import LGBMClassifier
+from sklearn.metrics import f1_score, roc_auc_score
 
 # Carregar o modelo treinado
-model = joblib.load('streamlit/lgbm_final_model.pkl')
+
+df_selected_features = pd.read_csv(r'streamlit/df_selected_features.csv')
+
+X = df_selected_features.drop('Rotatividade', axis=1)
+y = df_selected_features['Rotatividade']
+
+
+# Inicializar o classificador LightGBM
+lgbm = LGBMClassifier(verbose=-1)  # suprimindo avisos
+
+# Treinar o modelo
+lgbm.fit(X, y)
+
+# Fazer previsões no conjunto de teste
+y_pred = lgbm.predict(X)
+
+# Calcular as métricas F1 e AUC-ROC
+f1 = f1_score(y, y_pred)
+roc_auc = roc_auc_score(y, y_pred)
 
 # Título do app
 st.title('Previsor de Rotatividade')
-
 
 # Coletar dados do usuário usando caixas de rádio
 internet_seguranca_online = st.radio('Cliente tem Segurança Online?', ('Sim', 'Não'))
@@ -98,10 +120,18 @@ if st.button('Fazer Previsão'):
     features_array = features_array.reshape(1, -1)
     
     # Fazer a previsão
-    prediction = model.predict(features_array)
+    prediction = lgbm.predict(features_array)  # Alterado de model para lgbm
     
     # Exibir o resultado
     if prediction[0] == 1:
         st.success('Previsto: cliente COM risco de churn')
     else:
         st.success('Previsto: cliente SEM risco de churn')
+    
+   
+
+
+
+
+
+
