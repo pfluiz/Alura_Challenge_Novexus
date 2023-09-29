@@ -27,7 +27,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 # Carregar o modelo treinado
-model = joblib.load('lgbm_final_model.pkl')
+model = joblib.load('streamlit/lgbm_final_model.pkl')
 
 # Título do app
 st.title('Previsor de Rotatividade')
