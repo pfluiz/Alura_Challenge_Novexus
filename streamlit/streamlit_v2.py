@@ -102,6 +102,6 @@ if st.button('Fazer Previsão'):
     
     # Exibir o resultado
     if prediction[0] == 1:
-        st.success('Previsto: Classe 1')
+        st.success('Previsto: cliente COM risco de churn')
     else:
-        st.success('Previsto: Classe 0')
+        st.success('Previsto: cliente SEM risco de churn')
